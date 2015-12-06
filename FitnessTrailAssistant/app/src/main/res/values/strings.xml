@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">FitnessTrailAssistant</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_map">MapActivity</string>
+    <string name="title_activity_simple_direction">SimpleDirection</string>
+    <string name="title_activity_training_instructions">TrainingInstructions</string>
+    <string name="title_activity_ettelbruck">EttelbruckActivity</string>
+    <string name="title_activity_echternach">EchternachActivity</string>
+    <string name="title_activity_map_ettelbruck">MapEttelbruck</string>
+</resources>
