@@ -149,7 +149,7 @@ public class MapActivity extends AppCompatActivity {
             map.moveCamera(CameraUpdateFactory.newLatLngZoom(point1, 16));
 
             //---------Ettelbruck Road Add marker--------------------//
-            Marker ettelbruck_1 = map.addMarker(new MarkerOptions()
+           /* Marker ettelbruck_1 = map.addMarker(new MarkerOptions()
                     .position(point2R1)
                     .title("First 500m")
                     .draggable(true)
@@ -197,7 +197,7 @@ public class MapActivity extends AppCompatActivity {
                     .draggable(true)
                     .snippet("Make stretching exercise.")
                     .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-            map.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R14, 16));
+            map.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R14, 16));*/
             Marker second = map.addMarker(new MarkerOptions()
                     .position(point2)
                     .title("Ettelbruck")
@@ -207,7 +207,7 @@ public class MapActivity extends AppCompatActivity {
             map.moveCamera(CameraUpdateFactory.newLatLngZoom(point2, 16));
 
             //---------Echternach Road Add marker--------------------//
-            Marker echternach_1 = map.addMarker(new MarkerOptions()
+            /*Marker echternach_1 = map.addMarker(new MarkerOptions()
                     .position(point3R1)
                     .title("First 500m")
                     .draggable(true)
@@ -255,7 +255,7 @@ public class MapActivity extends AppCompatActivity {
                     .draggable(true)
                     .snippet("Make stretching exercise.")
                     .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-            map.moveCamera(CameraUpdateFactory.newLatLngZoom(point3R11, 16));
+            map.moveCamera(CameraUpdateFactory.newLatLngZoom(point3R11, 16));*/
             Marker third = map.addMarker(new MarkerOptions()
                     .position(point3)
                     .title("Echternach")

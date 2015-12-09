@@ -135,6 +135,50 @@ public class MapEttelbruck extends AppCompatActivity {
 
                 Toast.makeText(MapEttelbruck.this, selectedRadioValue1, Toast.LENGTH_LONG).show();
             }
+
+            if(selectedRadioValue1.equals("2min")){
+
+                //-----------------Test--------------------//
+                Marker first = map1.addMarker(new MarkerOptions()
+                        .position(point1)
+                        .title("Luxembourg City")
+                        .draggable(true)
+                        .snippet("Luxembourg City in Luxembourg.")
+                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+                map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point1, 16));
+
+                //---------Ettelbruck Road Add marker--------------------//
+
+                Marker echternach_2 = map1.addMarker(new MarkerOptions()
+                        .position(point2R6)
+                        .title("2min")
+                        .draggable(true)
+                        .snippet("Walk and breath deeply.")
+                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+                map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R6, 16));
+
+                Marker second = map1.addMarker(new MarkerOptions()
+                        .position(point2)
+                        .title("Ettelbruck")
+                        .draggable(true)
+                        .snippet("Ettelbruck City in Luxembourg.")
+                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+                map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2, 16));
+
+                // Polylines are useful for marking paths and routes on the map.
+                map1.addPolyline(new PolylineOptions().geodesic(true)
+                                .add(point1)  // Luxembourg
+                                .add(point2R1)
+                                .add(point2R2)
+                                .add(point2R3)
+                                .add(point2R4)
+                                .add(point2R5)
+                                .add(point2R6)
+                );
+
+                Toast.makeText(MapEttelbruck.this, selectedRadioValue1, Toast.LENGTH_LONG).show();
+            }
+
             else {}
 
         }catch (NullPointerException e) {
