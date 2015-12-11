@@ -36,18 +36,10 @@ import android.util.Log;
 
 public class MapActivity extends AppCompatActivity {
 
-    //-----------First ok-----------------//
-    //-33.867, 151.206
-    //private static final LatLng DAVAO = new LatLng(7.0722, 125.6131);
-    //private static final LatLng SYDNEY = new LatLng(-33.867, 151.206);
-
-    //------------Test-----------------//
-    //lat="49.7825175" lon="6.3533937"
-    //lat="49.7824989" lon="6.3533055
     //-----Luxembourg-------------------//
     LatLng point1 = new LatLng(49.61630634, 6.12658522);
 
-    //----Ettelbruck Road-----------------------//
+    //---Start---Ettelbruck Road-----------------------//
     LatLng point2 = new LatLng(49.8448811, 6.10255263);
     LatLng point2R1 = new LatLng(49.62667422, 6.11978214);
     LatLng point2R2 = new LatLng(49.64268385, 6.13626163);
@@ -66,7 +58,7 @@ public class MapActivity extends AppCompatActivity {
     LatLng point2R15 = new LatLng(49.81312593, 6.07309025);
     LatLng point2R16 = new LatLng(49.8308459, 6.07858341);
 
-    //Echternach---------Road---------------//
+    //-----Start--Echternach------Road---------------//
     LatLng point3 = new LatLng(49.81298973, 6.42939589);
     LatLng point3R1 = new LatLng(49.62311581, 6.15823429);
     LatLng point3R2 = new LatLng(49.64268385, 6.16647403);
@@ -82,23 +74,7 @@ public class MapActivity extends AppCompatActivity {
     LatLng point3R12 = new LatLng(49.79185339, 6.35873478);
     LatLng point3R13 = new LatLng(49.81135357, 6.39718693);
 
-
-
-
-
-    //LatLng start = new LatLng(13.744246499553903, 100.53428772836924);
-    //LatLng end = new LatLng(13.751279688694071, 100.54316081106663);
-
     private GoogleMap map;
-    //-----------End----------------------//
-
-   //sta tic final LatLng MELBOURNE = new LatLng(-37.813, 144.962);
-    //private GoogleMap mMap;
-
-    //-----------Test-------------------------//
-    //-----------End--------------------------//
-
-
 
 
     @Override
@@ -106,39 +82,10 @@ public class MapActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
 
-        /*MapFragment mapFragment = (MapFragment) getFragmentManager()
-                .findFragmentById(R.id.map);
-            mapFragment.getMapAsync(this);*/
-
-
         try {
 
             //-------------First ok------------------------//
             map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
-            /*Marker sydney = map.addMarker(new MarkerOptions().position(SYDNEY).title("Sydney").snippet("The most populous city in Australia."));
-            // zoom in the camera to Davao city
-            map.moveCamera(CameraUpdateFactory.newLatLngZoom(SYDNEY, 16));
-            // animate the zoom process
-            map.animateCamera(CameraUpdateFactory.zoomTo(15), 2000, null);*/
-
-            /*Marker start1 = map.addMarker(new MarkerOptions().position(start).title("Sydney1").snippet("The most populous city in Australia."));
-            // zoom in the camera to Davao city
-            map.moveCamera(CameraUpdateFactory.newLatLngZoom(start, 16));
-            // animate the zoom process
-            map.animateCamera(CameraUpdateFactory.zoomTo(15), 2000, null);
-
-            Marker start2 = map.addMarker(new MarkerOptions().position(end).title("Sydney2").snippet("The most populous city in Australia."));
-            // zoom in the camera to Davao city
-            map.moveCamera(CameraUpdateFactory.newLatLngZoom(end, 16));
-            // animate the zoom process
-            map.animateCamera(CameraUpdateFactory.zoomTo(15), 2000, null);
-
-           // map.animateCamera(CameraUpdateFactory.newLatLng(start2.getPosition()));
-
-            MarkerOptions markerOptions = new MarkerOptions().position(start).title(
-                    "Current Location").draggable(true);
-            map.addMarker(markerOptions);*/
-
             //-----------------Test--------------------//
             Marker first = map.addMarker(new MarkerOptions()
                     .position(point1)
@@ -263,6 +210,7 @@ public class MapActivity extends AppCompatActivity {
                     .snippet("Echternach City in Luxembourg.")
                     .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
             map.moveCamera(CameraUpdateFactory.newLatLngZoom(point3, 16));
+
             /*Marker melbourne = mMap.addMarker(new MarkerOptions()
                     .position(MELBOURNE)
                     .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));*/
@@ -312,14 +260,6 @@ public class MapActivity extends AppCompatActivity {
                     .add(point3)    // Echternach
             );
 
-            //----------------End----------------------//
-            // Polylines are useful for marking paths and routes on the map.
-            /*map.addPolyline(new PolylineOptions().geodesic(true)
-                    .add(start)  // Sydney
-                    .add(end)  // Fiji
-            );*/
-
-
             //---------------End---------------------------//
 
         }catch (NullPointerException e) {
@@ -327,22 +267,5 @@ public class MapActivity extends AppCompatActivity {
         }
 
     }
-
-    /*@Override
-    public void onMapReady(GoogleMap map) {
-        LatLng sydney = new LatLng(-33.867, 151.206);
-
-        map.setMyLocationEnabled(true);
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 13));
-
-        map.addMarker(new MarkerOptions()
-                .title("Sydney")
-                .snippet("The most populous city in Australia.")
-                .position(sydney));
-    }*/
-
-    //-----------------Test---------------------//
-
-    //-----------------End----------------------//
 
 }

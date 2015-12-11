@@ -33,7 +33,7 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="First 500m"
+            android:text="Walk Fast Mode"
             android:id="@+id/radioButton1"
             android:layout_below="@+id/textView2"
             android:layout_alignParentLeft="true"
@@ -43,7 +43,7 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="During 2000m"
+            android:text="Run Normally"
             android:id="@+id/radioButton2"
             android:layout_below="@+id/radioButton1"
             android:layout_alignParentRight="true"
@@ -54,7 +54,7 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="2min"
+            android:text="Walk and Breath Deeply"
             android:id="@+id/radioButton3"
             android:layout_below="@+id/radioButton2"
             android:layout_alignParentLeft="true"
@@ -66,7 +66,7 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="2000m"
+            android:text="Again Run Normally"
             android:id="@+id/radioButton4"
             android:layout_below="@+id/radioButton3"
             android:layout_alignRight="@+id/radioButton3"
@@ -77,7 +77,7 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="400m"
+            android:text="Sprint and Walk"
             android:id="@+id/radioButton5"
             android:layout_below="@+id/radioButton4"
             android:layout_alignParentLeft="true"
@@ -88,25 +88,13 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="2min Walk"
+            android:text="Make Stretching Exercise"
             android:id="@+id/radioButton6"
             android:layout_below="@+id/radioButton5"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignRight="@+id/radioButton5"
             android:layout_alignEnd="@+id/radioButton5" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Make Stretching Exercise"
-            android:id="@+id/radioButton7"
-            android:layout_below="@+id/radioButton6"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignRight="@+id/radioButton6"
-            android:layout_alignEnd="@+id/radioButton6"
-            android:onClick="clickShowItinerary1" />
 
     </RadioGroup>
 
