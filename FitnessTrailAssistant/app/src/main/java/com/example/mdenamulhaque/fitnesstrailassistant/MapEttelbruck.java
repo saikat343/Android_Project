@@ -58,10 +58,67 @@ public class MapEttelbruck extends AppCompatActivity {
             Intent intent = getIntent();
             String selectedRadioValue1 = intent.getStringExtra("radioGroup1Selected");
 
-            if(selectedRadioValue1.equals("Walk Fast Mode")){
+            //-------Predefined Route points add------------------------//
+            Marker first_1 = map1.addMarker(new MarkerOptions()
+                    .position(point1)
+                    .title("Luxembourg City")
+                    .draggable(true)
+                    .snippet("Luxembourg City in Luxembourg.")
+                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+            map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point1, 16));
+
+            Marker first = map1.addMarker(new MarkerOptions()
+                    .position(point2R3)
+                    .title("500m")
+                    .draggable(true)
+                    .snippet("Luxembourg City in Luxembourg.")
+                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+            map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R3, 16));
+
+            Marker second = map1.addMarker(new MarkerOptions()
+                    .position(point2R6)
+                    .title("2000m")
+                    .draggable(true)
+                    .snippet("Luxembourg City in Luxembourg.")
+                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+            map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R6, 16));
+
+            Marker third = map1.addMarker(new MarkerOptions()
+                    .position(point2R9)
+                    .title("2min")
+                    .draggable(true)
+                    .snippet("Luxembourg City in Luxembourg.")
+                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+            map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R9, 16));
+
+            Marker fourth = map1.addMarker(new MarkerOptions()
+                    .position(point2R12)
+                    .title("2000m")
+                    .draggable(true)
+                    .snippet("Luxembourg City in Luxembourg.")
+                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+            map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R12, 16));
+
+            Marker five = map1.addMarker(new MarkerOptions()
+                    .position(point2R15)
+                    .title("400m and 2min")
+                    .draggable(true)
+                    .snippet("Luxembourg City in Luxembourg.")
+                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+            map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R15, 16));
+
+            Marker second_1 = map1.addMarker(new MarkerOptions()
+                    .position(point2)
+                    .title("Ettelbruck")
+                    .draggable(true)
+                    .snippet("Ettelbruck City in Luxembourg.")
+                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+            map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2, 16));
+
+            /*if(selectedRadioValue1.equals("Walk Fast Mode")){
 
                 //-----------------Test--------------------//
-                Marker first = map1.addMarker(new MarkerOptions()
+                Marker first_1 = map1.addMarker(new MarkerOptions()
                         .position(point1)
                         .title("Luxembourg City")
                         .draggable(true)
@@ -78,7 +135,7 @@ public class MapEttelbruck extends AppCompatActivity {
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
                 map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R1, 16));
 
-                Marker second = map1.addMarker(new MarkerOptions()
+                Marker second_1 = map1.addMarker(new MarkerOptions()
                         .position(point2)
                         .title("Ettelbruck")
                         .draggable(true)
@@ -98,7 +155,7 @@ public class MapEttelbruck extends AppCompatActivity {
             if(selectedRadioValue1.equals("Run Normally")){
 
                 //-----------------Test--------------------//
-                Marker first = map1.addMarker(new MarkerOptions()
+                Marker first_1 = map1.addMarker(new MarkerOptions()
                         .position(point1)
                         .title("Luxembourg City")
                         .draggable(true)
@@ -116,7 +173,7 @@ public class MapEttelbruck extends AppCompatActivity {
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
                 map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R4, 16));
 
-                Marker second = map1.addMarker(new MarkerOptions()
+                Marker second_1 = map1.addMarker(new MarkerOptions()
                         .position(point2)
                         .title("Ettelbruck")
                         .draggable(true)
@@ -139,7 +196,7 @@ public class MapEttelbruck extends AppCompatActivity {
             if(selectedRadioValue1.equals("Walk and Breath Deeply")){
 
                 //-----------------Test--------------------//
-                Marker first = map1.addMarker(new MarkerOptions()
+                Marker first_1 = map1.addMarker(new MarkerOptions()
                         .position(point1)
                         .title("Luxembourg City")
                         .draggable(true)
@@ -157,7 +214,7 @@ public class MapEttelbruck extends AppCompatActivity {
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
                 map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R6, 16));
 
-                Marker second = map1.addMarker(new MarkerOptions()
+                Marker second_1 = map1.addMarker(new MarkerOptions()
                         .position(point2)
                         .title("Ettelbruck")
                         .draggable(true)
@@ -179,7 +236,7 @@ public class MapEttelbruck extends AppCompatActivity {
                 Toast.makeText(MapEttelbruck.this, selectedRadioValue1, Toast.LENGTH_LONG).show();
             }
 
-            else {}
+            else {}*/
 
         }catch (NullPointerException e) {
             e.printStackTrace();
