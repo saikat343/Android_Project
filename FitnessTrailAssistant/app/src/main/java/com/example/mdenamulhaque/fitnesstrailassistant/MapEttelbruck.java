@@ -58,7 +58,7 @@ public class MapEttelbruck extends AppCompatActivity {
             Intent intent = getIntent();
             String selectedRadioValue1 = intent.getStringExtra("radioGroup1Selected");
 
-            if(selectedRadioValue1.equals("First 500m")){
+            if(selectedRadioValue1.equals("Walk Fast Mode")){
 
                 //-----------------Test--------------------//
                 Marker first = map1.addMarker(new MarkerOptions()
@@ -95,7 +95,7 @@ public class MapEttelbruck extends AppCompatActivity {
 
                 Toast.makeText(MapEttelbruck.this, selectedRadioValue1, Toast.LENGTH_LONG).show();
             }
-            if(selectedRadioValue1.equals("During 2000m")){
+            if(selectedRadioValue1.equals("Run Normally")){
 
                 //-----------------Test--------------------//
                 Marker first = map1.addMarker(new MarkerOptions()
@@ -136,7 +136,7 @@ public class MapEttelbruck extends AppCompatActivity {
                 Toast.makeText(MapEttelbruck.this, selectedRadioValue1, Toast.LENGTH_LONG).show();
             }
 
-            if(selectedRadioValue1.equals("2min")){
+            if(selectedRadioValue1.equals("Walk and Breath Deeply")){
 
                 //-----------------Test--------------------//
                 Marker first = map1.addMarker(new MarkerOptions()
