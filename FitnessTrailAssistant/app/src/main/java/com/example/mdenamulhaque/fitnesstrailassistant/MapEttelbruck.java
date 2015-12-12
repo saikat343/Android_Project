@@ -237,6 +237,7 @@ public class MapEttelbruck extends AppCompatActivity {
             }
 
             else {}*/
+            
 
         }catch (NullPointerException e) {
             e.printStackTrace();
