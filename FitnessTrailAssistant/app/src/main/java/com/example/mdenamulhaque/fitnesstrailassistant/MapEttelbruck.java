@@ -1,6 +1,7 @@
 package com.example.mdenamulhaque.fitnesstrailassistant;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -17,6 +18,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 
 public class MapEttelbruck extends AppCompatActivity {
@@ -115,10 +117,11 @@ public class MapEttelbruck extends AppCompatActivity {
                     .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
             map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2, 16));
 
-            /*if(selectedRadioValue1.equals("Walk Fast Mode")){
+            //-------End Predefined Route points add------------------------//
+            if(selectedRadioValue1.equals("Walk Fast Mode")){
 
                 //-----------------Test--------------------//
-                Marker first_1 = map1.addMarker(new MarkerOptions()
+                Marker first1 = map1.addMarker(new MarkerOptions()
                         .position(point1)
                         .title("Luxembourg City")
                         .draggable(true)
@@ -135,7 +138,7 @@ public class MapEttelbruck extends AppCompatActivity {
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
                 map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R1, 16));
 
-                Marker second_1 = map1.addMarker(new MarkerOptions()
+                Marker second1 = map1.addMarker(new MarkerOptions()
                         .position(point2)
                         .title("Ettelbruck")
                         .draggable(true)
@@ -144,15 +147,22 @@ public class MapEttelbruck extends AppCompatActivity {
                 map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2, 16));
 
                 // Polylines are useful for marking paths and routes on the map.
-                map1.addPolyline(new PolylineOptions().geodesic(true)
+                /*map1.addPolyline(new PolylineOptions().geodesic(true)
                                 .add(point1)  // Luxembourg
                                 .add(point2R1)
 
-                );
+                );*/
+
+                // Add a thin red line from London to New York.
+                Polyline line = map1.addPolyline(new PolylineOptions()
+                        .add(point1, point2R1)
+                        .width(5)
+                        .color(Color.RED));
 
                 Toast.makeText(MapEttelbruck.this, selectedRadioValue1, Toast.LENGTH_LONG).show();
             }
-            if(selectedRadioValue1.equals("Run Normally")){
+
+            /*if(selectedRadioValue1.equals("Run Normally")){
 
                 //-----------------Test--------------------//
                 Marker first_1 = map1.addMarker(new MarkerOptions()
