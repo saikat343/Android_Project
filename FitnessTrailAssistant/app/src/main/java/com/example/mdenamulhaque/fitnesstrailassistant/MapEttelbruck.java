@@ -152,7 +152,7 @@ public class MapEttelbruck extends AppCompatActivity {
                         .add(point1, point2R1,point2R2,point2R3)
                         .width(10)
                         .color(Color.RED));
-                
+
                 Toast.makeText(MapEttelbruck.this, selectedRadioValue1, Toast.LENGTH_LONG).show();
             }
 
@@ -167,7 +167,6 @@ public class MapEttelbruck extends AppCompatActivity {
                 map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point1, 16));
 
                 //---------Ettelbruck Road Add marker--------------------//
-
                 Marker ettelbruck_1 = map1.addMarker(new MarkerOptions()
                         .position(point2R3)
                         .title("500m")
@@ -395,7 +394,6 @@ public class MapEttelbruck extends AppCompatActivity {
             }
 
             else {}
-            
 
         }catch (NullPointerException e) {
             e.printStackTrace();
