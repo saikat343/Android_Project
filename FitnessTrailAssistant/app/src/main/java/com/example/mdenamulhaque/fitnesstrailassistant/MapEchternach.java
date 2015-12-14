@@ -8,7 +8,6 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -21,42 +20,36 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 
-public class MapEttelbruck extends AppCompatActivity {
-    TextView txtView;
-    String hello;
+public class MapEchternach extends AppCompatActivity {
 
     private GoogleMap map1;
 
     //-----Luxembourg-------------------//
     LatLng point1 = new LatLng(49.61630634, 6.12658522);
 
-    //----Ettelbruck Road-----------------------//
-    LatLng point2 = new LatLng(49.8448811, 6.10255263);
-    LatLng point2R1 = new LatLng(49.62667422, 6.11978214);
-    LatLng point2R2 = new LatLng(49.64268385, 6.13626163);
-    LatLng point2R3 = new LatLng(49.65335402, 6.11428898);
-    LatLng point2R4 = new LatLng(49.66579959, 6.13076847);
-    LatLng point2R5 = new LatLng(49.67646469, 6.11154239);
-    LatLng point2R6 = new LatLng(49.68535048, 6.0950629);
-    LatLng point2R7 = new LatLng(49.69423465, 6.08132999);
-    LatLng point2R8 = new LatLng(49.71022207, 6.10330265);
-    LatLng point2R9 = new LatLng(49.72265309, 6.08132999);
-    LatLng point2R10 = new LatLng(49.73508093, 6.11428898);
-    LatLng point2R11 = new LatLng(49.7510549, 6.08956974);
-    LatLng point2R12 = new LatLng(49.77057151, 6.07034366);
-    LatLng point2R13 = new LatLng(49.78476047, 6.10330265);
-    LatLng point2R14 = new LatLng(49.79894528, 6.07858341);
-    LatLng point2R15 = new LatLng(49.81312593, 6.07309025);
-    LatLng point2R16 = new LatLng(49.8308459, 6.07858341);
-
+    //-----Start--Echternach------Road---------------//
+    LatLng point3 = new LatLng(49.81298973, 6.42939589);
+    LatLng point3R1 = new LatLng(49.62311581, 6.15823429);
+    LatLng point3R2 = new LatLng(49.64268385, 6.16647403);
+    LatLng point3R3 = new LatLng(49.63912661, 6.21865909);
+    LatLng point3R4 = new LatLng(49.66402184, 6.21865909);
+    LatLng point3R5 = new LatLng(49.67646469, 6.25161808);
+    LatLng point3R6 = new LatLng(49.704489352, 6.24063175);
+    LatLng point3R7 = new LatLng(49.70844595, 6.27633732);
+    LatLng point3R8 = new LatLng(49.7279797, 6.27633732);
+    LatLng point3R9 = new LatLng(49.73153044, 6.31753605);
+    LatLng point3R10 = new LatLng(49.75992706, 6.31753605);
+    LatLng point3R11 = new LatLng(49.77234536, 6.36422794);
+    LatLng point3R12 = new LatLng(49.79185339, 6.35873478);
+    LatLng point3R13 = new LatLng(49.81135357, 6.39718693);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_map_ettelbruck);
+        setContentView(R.layout.activity_map_echternach);
 
         try {
-            map1 = ((MapFragment) getFragmentManager().findFragmentById(R.id.mapEttelbruck)).getMap();
+            map1 = ((MapFragment) getFragmentManager().findFragmentById(R.id.mapEchternach)).getMap();
             Intent intent = getIntent();
             String selectedRadioValue1 = intent.getStringExtra("radioGroup1Selected");
 
@@ -70,55 +63,57 @@ public class MapEttelbruck extends AppCompatActivity {
             map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point1, 16));
 
             Marker first = map1.addMarker(new MarkerOptions()
-                    .position(point2R3)
+                    .position(point3R3)
                     .title("500m")
                     .draggable(true)
                     .snippet("Walk Fast Mode")
                     .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-            map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R3, 16));
+            map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point3R3, 16));
 
             Marker second = map1.addMarker(new MarkerOptions()
-                    .position(point2R6)
+                    .position(point3R5)
                     .title("2000m")
                     .draggable(true)
                     .snippet("Run Normally")
                     .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-            map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R6, 16));
+            map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point3R5, 16));
 
             Marker third = map1.addMarker(new MarkerOptions()
-                    .position(point2R9)
+                    .position(point3R8)
                     .title("2min")
                     .draggable(true)
                     .snippet("Walk and Breath Deeply")
                     .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-            map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R9, 16));
+            map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point3R8, 16));
 
             Marker fourth = map1.addMarker(new MarkerOptions()
-                    .position(point2R12)
+                    .position(point3R10)
                     .title("2000m")
                     .draggable(true)
                     .snippet("Again Run Normally")
                     .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-            map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R12, 16));
+            map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point3R10, 16));
 
             Marker five = map1.addMarker(new MarkerOptions()
-                    .position(point2R15)
+                    .position(point3R12)
                     .title("400m and 2min")
                     .draggable(true)
                     .snippet("Sprint and Walk")
                     .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-            map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R15, 16));
+            map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point3R12, 16));
 
             Marker second_1 = map1.addMarker(new MarkerOptions()
-                    .position(point2)
+                    .position(point3)
                     .title("Make Stretching Exercise")
                     .draggable(true)
-                    .snippet("Finishing Point in Ettelbruck City.")
+                    .snippet("Finishing Point in Echternach City.")
                     .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-            map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2, 16));*/
+            map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point3, 16));*/
 
             //-------End Predefined Route points add------------------------//
 
+
+            //-------Marked the specific points in the route-------------//
             if(selectedRadioValue1.equals("Walk Fast Mode")){
 
                 //-----------------Test--------------------//
@@ -131,29 +126,29 @@ public class MapEttelbruck extends AppCompatActivity {
                 map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point1, 16));
 
                 //---------Ettelbruck Road Add marker--------------------//
-                Marker ettelbruck_1 = map1.addMarker(new MarkerOptions()
-                        .position(point2R3)
+                Marker echternach_1 = map1.addMarker(new MarkerOptions()
+                        .position(point3R3)
                         .title("500m")
                         .draggable(true)
                         .snippet("Walk Fast Mode.")
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-                map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R3, 16));
+                map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point3R3, 16));
 
                 Marker second1 = map1.addMarker(new MarkerOptions()
-                        .position(point2)
+                        .position(point3)
                         .title("Finishing Position")
                         .draggable(true)
-                        .snippet("Ettelbruck City in Luxembourg.")
+                        .snippet("Echternach City in Luxembourg.")
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-                map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2, 16));
+                map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point3, 16));
 
                 // Add a thin red line.
                 Polyline line = map1.addPolyline(new PolylineOptions()
-                        .add(point1, point2R1,point2R2,point2R3)
-                        .width(5)
+                        .add(point1, point3R1,point3R2,point3R3)
+                        .width(10)
                         .color(Color.RED));
 
-                Toast.makeText(MapEttelbruck.this, selectedRadioValue1, Toast.LENGTH_LONG).show();
+                Toast.makeText(MapEchternach.this, selectedRadioValue1, Toast.LENGTH_LONG).show();
             }
 
             if(selectedRadioValue1.equals("Run Normally")){
@@ -170,36 +165,36 @@ public class MapEttelbruck extends AppCompatActivity {
                 //---------Ettelbruck Road Add marker--------------------//
 
                 Marker ettelbruck_1 = map1.addMarker(new MarkerOptions()
-                        .position(point2R3)
+                        .position(point3R3)
                         .title("500m")
                         .draggable(true)
                         .snippet("Walk Fast Mode.")
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-                map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R3, 16));
+                map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point3R3, 16));
 
                 Marker echternach_2 = map1.addMarker(new MarkerOptions()
-                        .position(point2R6)
+                        .position(point3R5)
                         .title("2000m")
                         .draggable(true)
                         .snippet("Run normally.")
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-                map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R6, 16));
+                map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point3R5, 16));
 
                 Marker second2 = map1.addMarker(new MarkerOptions()
-                        .position(point2)
+                        .position(point3)
                         .title("Finishing Position")
                         .draggable(true)
-                        .snippet("Ettelbruck City in Luxembourg.")
+                        .snippet("Echternach City in Luxembourg.")
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-                map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2, 16));
+                map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point3, 16));
 
                 // Add a thin Green line.
                 Polyline line = map1.addPolyline(new PolylineOptions()
-                        .add(point2R3,point2R4,point2R5,point2R6)
-                        .width(5)
+                        .add(point3R3,point3R4,point3R5)
+                        .width(10)
                         .color(Color.GREEN));
 
-                Toast.makeText(MapEttelbruck.this, selectedRadioValue1, Toast.LENGTH_LONG).show();
+                Toast.makeText(MapEchternach.this, selectedRadioValue1, Toast.LENGTH_LONG).show();
             }
 
             if(selectedRadioValue1.equals("Walk and Breath Deeply")){
@@ -215,36 +210,36 @@ public class MapEttelbruck extends AppCompatActivity {
 
                 //---------Ettelbruck Road Add marker--------------------//
                 Marker echternach1 = map1.addMarker(new MarkerOptions()
-                        .position(point2R6)
+                        .position(point3R5)
                         .title("2000m")
                         .draggable(true)
                         .snippet("Run normally.")
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-                map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R6, 16));
+                map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point3R5, 16));
 
                 Marker echternach_2 = map1.addMarker(new MarkerOptions()
-                        .position(point2R9)
+                        .position(point3R8)
                         .title("2min")
                         .draggable(true)
                         .snippet("Walk and Breath Deeply.")
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-                map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R9, 16));
+                map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point3R8, 16));
 
                 Marker second_1 = map1.addMarker(new MarkerOptions()
-                        .position(point2)
+                        .position(point3)
                         .title("Finishing Position")
                         .draggable(true)
-                        .snippet("Ettelbruck City in Luxembourg.")
+                        .snippet("Echternach City in Luxembourg.")
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-                map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2, 16));
+                map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point3, 16));
 
                 // Add a thin Green line.
                 Polyline line = map1.addPolyline(new PolylineOptions()
-                        .add(point2R6,point2R7,point2R8,point2R9)
+                        .add(point3R5,point3R6,point3R7,point3R8)
                         .width(5)
                         .color(Color.YELLOW));
 
-                Toast.makeText(MapEttelbruck.this, selectedRadioValue1, Toast.LENGTH_LONG).show();
+                Toast.makeText(MapEchternach.this, selectedRadioValue1, Toast.LENGTH_LONG).show();
             }
 
             if(selectedRadioValue1.equals("Again Run Normally")){
@@ -260,36 +255,36 @@ public class MapEttelbruck extends AppCompatActivity {
 
                 //---------Ettelbruck Road Add marker--------------------//
                 Marker echternach_1 = map1.addMarker(new MarkerOptions()
-                        .position(point2R9)
+                        .position(point3R8)
                         .title("2min")
                         .draggable(true)
                         .snippet("Walk and Breath Deeply.")
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-                map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R9, 16));
+                map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point3R8, 16));
 
                 Marker echternach_2 = map1.addMarker(new MarkerOptions()
-                        .position(point2R12)
+                        .position(point3R10)
                         .title("2000m")
                         .draggable(true)
                         .snippet("Run Normally")
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-                map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R12, 16));
+                map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point3R10, 16));
 
                 Marker second_1 = map1.addMarker(new MarkerOptions()
-                        .position(point2)
+                        .position(point3)
                         .title("Finishing Position")
                         .draggable(true)
-                        .snippet("Ettelbruck City in Luxembourg.")
+                        .snippet("Echternach City in Luxembourg.")
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-                map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2, 16));
+                map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point3, 16));
 
                 // Add a thin Green line.
                 Polyline line = map1.addPolyline(new PolylineOptions()
-                        .add(point2R9,point2R10,point2R11,point2R12)
+                        .add(point3R8,point3R9,point3R10)
                         .width(5)
                         .color(Color.MAGENTA));
 
-                Toast.makeText(MapEttelbruck.this, selectedRadioValue1, Toast.LENGTH_LONG).show();
+                Toast.makeText(MapEchternach.this, selectedRadioValue1, Toast.LENGTH_LONG).show();
             }
 
             if(selectedRadioValue1.equals("Sprint and Walk")){
@@ -305,38 +300,36 @@ public class MapEttelbruck extends AppCompatActivity {
 
                 //---------Ettelbruck Road Add marker--------------------//
                 Marker echternach_1 = map1.addMarker(new MarkerOptions()
-                        .position(point2R12)
+                        .position(point3R10)
                         .title("2000m")
                         .draggable(true)
                         .snippet("Run Normally")
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-                map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R12, 16));
+                map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point3R10, 16));
 
                 Marker echternach_2 = map1.addMarker(new MarkerOptions()
-                        .position(point2R15)
+                        .position(point3R12)
                         .title("400m and 2min")
                         .draggable(true)
                         .snippet("Sprint and Walk.")
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-                map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R15, 16));
-
-
+                map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point3R12, 16));
 
                 Marker second_1 = map1.addMarker(new MarkerOptions()
-                        .position(point2)
+                        .position(point3)
                         .title("Finishing Position")
                         .draggable(true)
-                        .snippet("Ettelbruck City in Luxembourg.")
+                        .snippet("Echternach City in Luxembourg.")
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-                map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2, 16));
+                map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point3, 16));
 
                 // Add a thin Green line.
                 Polyline line = map1.addPolyline(new PolylineOptions()
-                        .add(point2R12,point2R13,point2R14,point2R15)
+                        .add(point3R10,point3R11,point3R12)
                         .width(5)
                         .color(Color.GRAY));
 
-                Toast.makeText(MapEttelbruck.this, selectedRadioValue1, Toast.LENGTH_LONG).show();
+                Toast.makeText(MapEchternach.this, selectedRadioValue1, Toast.LENGTH_LONG).show();
             }
             if(selectedRadioValue1.equals("Make Stretching Exercise")){
 
@@ -352,38 +345,37 @@ public class MapEttelbruck extends AppCompatActivity {
                 //---------Ettelbruck Road Add marker--------------------//
 
                 Marker echternach_2 = map1.addMarker(new MarkerOptions()
-                        .position(point2R15)
+                        .position(point3R12)
                         .title("400m and 2min")
                         .draggable(true)
                         .snippet("Sprint and Walk.")
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-                map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R15, 16));
+                map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point3R12, 16));
 
 
                 Marker second_1 = map1.addMarker(new MarkerOptions()
-                        .position(point2)
+                        .position(point3)
                         .title("Finishing Position")
                         .draggable(true)
                         .snippet("Make Stretching Exercise")
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-                map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2, 16));
+                map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point3, 16));
 
                 // Add a thin Green line.
                 Polyline line = map1.addPolyline(new PolylineOptions()
-                        .add(point2R15,point2R16,point2)
+                        .add(point3R12,point3R13,point3)
                         .width(5)
                         .color(Color.CYAN));
 
-                Toast.makeText(MapEttelbruck.this, selectedRadioValue1, Toast.LENGTH_LONG).show();
+                Toast.makeText(MapEchternach.this, selectedRadioValue1, Toast.LENGTH_LONG).show();
             }
 
             else {}
-            
+
 
         }catch (NullPointerException e) {
             e.printStackTrace();
         }
-
     }
 
 }
