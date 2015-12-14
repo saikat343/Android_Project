@@ -126,7 +126,7 @@ public class MapEttelbruck extends AppCompatActivity {
                         .position(point1)
                         .title("Start Position")
                         .draggable(true)
-                        .snippet("Luxembourg City in Luxembourg.")
+                        .snippet("Start with Walk Fast Mode in Luxembourg City.")
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
                 map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point1, 16));
 
@@ -135,7 +135,7 @@ public class MapEttelbruck extends AppCompatActivity {
                         .position(point2R3)
                         .title("500m")
                         .draggable(true)
-                        .snippet("Walk Fast Mode.")
+                        .snippet("Finished Walk Fast Mode.")
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
                 map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R3, 16));
 
@@ -150,7 +150,7 @@ public class MapEttelbruck extends AppCompatActivity {
                 // Add a thin red line.
                 Polyline line = map1.addPolyline(new PolylineOptions()
                         .add(point1, point2R1,point2R2,point2R3)
-                        .width(5)
+                        .width(10)
                         .color(Color.RED));
 
                 Toast.makeText(MapEttelbruck.this, selectedRadioValue1, Toast.LENGTH_LONG).show();
@@ -173,7 +173,7 @@ public class MapEttelbruck extends AppCompatActivity {
                         .position(point2R3)
                         .title("500m")
                         .draggable(true)
-                        .snippet("Walk Fast Mode.")
+                        .snippet("Start Run normally.")
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
                 map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R3, 16));
 
@@ -181,7 +181,7 @@ public class MapEttelbruck extends AppCompatActivity {
                         .position(point2R6)
                         .title("2000m")
                         .draggable(true)
-                        .snippet("Run normally.")
+                        .snippet("Finished Run normally.")
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
                 map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R6, 16));
 
@@ -195,9 +195,13 @@ public class MapEttelbruck extends AppCompatActivity {
 
                 // Add a thin Green line.
                 Polyline line = map1.addPolyline(new PolylineOptions()
-                        .add(point2R3,point2R4,point2R5,point2R6)
+                        .add(point1, point2R1, point2R2,point2R3)
                         .width(5)
                         .color(Color.GREEN));
+                Polyline line1 = map1.addPolyline(new PolylineOptions()
+                        .add(point2R3,point2R4,point2R5,point2R6)
+                        .width(10)
+                        .color(Color.RED));
 
                 Toast.makeText(MapEttelbruck.this, selectedRadioValue1, Toast.LENGTH_LONG).show();
             }
@@ -218,7 +222,7 @@ public class MapEttelbruck extends AppCompatActivity {
                         .position(point2R6)
                         .title("2000m")
                         .draggable(true)
-                        .snippet("Run normally.")
+                        .snippet("Start Walk and Breath Deeply.")
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
                 map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R6, 16));
 
@@ -226,7 +230,7 @@ public class MapEttelbruck extends AppCompatActivity {
                         .position(point2R9)
                         .title("2min")
                         .draggable(true)
-                        .snippet("Walk and Breath Deeply.")
+                        .snippet("Finished Walk and Breath Deeply.")
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
                 map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R9, 16));
 
@@ -240,9 +244,13 @@ public class MapEttelbruck extends AppCompatActivity {
 
                 // Add a thin Green line.
                 Polyline line = map1.addPolyline(new PolylineOptions()
-                        .add(point2R6,point2R7,point2R8,point2R9)
+                        .add(point1, point2R1, point2R2,point2R3,point2R4,point2R5,point2R6)
                         .width(5)
-                        .color(Color.YELLOW));
+                        .color(Color.GREEN));
+                Polyline line1 = map1.addPolyline(new PolylineOptions()
+                        .add(point2R6,point2R7,point2R8,point2R9)
+                        .width(10)
+                        .color(Color.RED));
 
                 Toast.makeText(MapEttelbruck.this, selectedRadioValue1, Toast.LENGTH_LONG).show();
             }
@@ -263,7 +271,7 @@ public class MapEttelbruck extends AppCompatActivity {
                         .position(point2R9)
                         .title("2min")
                         .draggable(true)
-                        .snippet("Walk and Breath Deeply.")
+                        .snippet("Start Run Normally again.")
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
                 map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R9, 16));
 
@@ -271,7 +279,7 @@ public class MapEttelbruck extends AppCompatActivity {
                         .position(point2R12)
                         .title("2000m")
                         .draggable(true)
-                        .snippet("Run Normally")
+                        .snippet("Finished Run Normally.")
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
                 map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R12, 16));
 
@@ -285,9 +293,13 @@ public class MapEttelbruck extends AppCompatActivity {
 
                 // Add a thin Green line.
                 Polyline line = map1.addPolyline(new PolylineOptions()
-                        .add(point2R9,point2R10,point2R11,point2R12)
+                        .add(point1, point2R1, point2R2,point2R3,point2R4,point2R5,point2R6,point2R7,point2R8,point2R9)
                         .width(5)
-                        .color(Color.MAGENTA));
+                        .color(Color.GREEN));
+                Polyline line1 = map1.addPolyline(new PolylineOptions()
+                        .add(point2R9,point2R10,point2R11,point2R12)
+                        .width(10)
+                        .color(Color.RED));
 
                 Toast.makeText(MapEttelbruck.this, selectedRadioValue1, Toast.LENGTH_LONG).show();
             }
@@ -308,7 +320,7 @@ public class MapEttelbruck extends AppCompatActivity {
                         .position(point2R12)
                         .title("2000m")
                         .draggable(true)
-                        .snippet("Run Normally")
+                        .snippet("Start Sprint and Walk.")
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
                 map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R12, 16));
 
@@ -316,7 +328,7 @@ public class MapEttelbruck extends AppCompatActivity {
                         .position(point2R15)
                         .title("400m and 2min")
                         .draggable(true)
-                        .snippet("Sprint and Walk.")
+                        .snippet("Finished Sprint and Walk.")
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
                 map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R15, 16));
 
@@ -332,9 +344,13 @@ public class MapEttelbruck extends AppCompatActivity {
 
                 // Add a thin Green line.
                 Polyline line = map1.addPolyline(new PolylineOptions()
-                        .add(point2R12,point2R13,point2R14,point2R15)
+                        .add(point1, point2R1, point2R2,point2R3,point2R4,point2R5,point2R6,point2R7,point2R8,point2R9,point2R10,point2R11,point2R12)
                         .width(5)
-                        .color(Color.GRAY));
+                        .color(Color.GREEN));
+                Polyline line1 = map1.addPolyline(new PolylineOptions()
+                        .add(point2R12,point2R13,point2R14,point2R15)
+                        .width(10)
+                        .color(Color.RED));
 
                 Toast.makeText(MapEttelbruck.this, selectedRadioValue1, Toast.LENGTH_LONG).show();
             }
@@ -355,7 +371,7 @@ public class MapEttelbruck extends AppCompatActivity {
                         .position(point2R15)
                         .title("400m and 2min")
                         .draggable(true)
-                        .snippet("Sprint and Walk.")
+                        .snippet("Start Make Stretching Exercise")
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
                 map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R15, 16));
 
@@ -364,15 +380,20 @@ public class MapEttelbruck extends AppCompatActivity {
                         .position(point2)
                         .title("Finishing Position")
                         .draggable(true)
-                        .snippet("Make Stretching Exercise")
+                        .snippet("Finished Make Stretching Exercise in Ettelbruck.")
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
                 map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2, 16));
 
                 // Add a thin Green line.
                 Polyline line = map1.addPolyline(new PolylineOptions()
-                        .add(point2R15,point2R16,point2)
+                        .add(point1, point2R1, point2R2,point2R3,point2R4,point2R5,point2R6,point2R7
+                                ,point2R8,point2R9,point2R10,point2R11,point2R12,point2R13,point2R14,point2R15)
                         .width(5)
-                        .color(Color.CYAN));
+                        .color(Color.GREEN));
+                Polyline line1 = map1.addPolyline(new PolylineOptions()
+                        .add(point2R15,point2R16,point2)
+                        .width(10)
+                        .color(Color.RED));
 
                 Toast.makeText(MapEttelbruck.this, selectedRadioValue1, Toast.LENGTH_LONG).show();
             }

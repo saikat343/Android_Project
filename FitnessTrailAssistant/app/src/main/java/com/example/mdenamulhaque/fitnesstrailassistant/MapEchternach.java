@@ -121,7 +121,7 @@ public class MapEchternach extends AppCompatActivity {
                         .position(point1)
                         .title("Start Position")
                         .draggable(true)
-                        .snippet("Luxembourg City in Luxembourg.")
+                        .snippet("Start with Walk Fast Mode in Luxembourg City.")
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
                 map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point1, 16));
 
@@ -130,7 +130,7 @@ public class MapEchternach extends AppCompatActivity {
                         .position(point3R3)
                         .title("500m")
                         .draggable(true)
-                        .snippet("Walk Fast Mode.")
+                        .snippet("Finished Walk Fast Mode.")
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
                 map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point3R3, 16));
 
@@ -168,7 +168,7 @@ public class MapEchternach extends AppCompatActivity {
                         .position(point3R3)
                         .title("500m")
                         .draggable(true)
-                        .snippet("Walk Fast Mode.")
+                        .snippet("Start Run normally.")
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
                 map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point3R3, 16));
 
@@ -176,7 +176,7 @@ public class MapEchternach extends AppCompatActivity {
                         .position(point3R5)
                         .title("2000m")
                         .draggable(true)
-                        .snippet("Run normally.")
+                        .snippet("Finished Run normally.")
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
                 map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point3R5, 16));
 
@@ -190,9 +190,13 @@ public class MapEchternach extends AppCompatActivity {
 
                 // Add a thin Green line.
                 Polyline line = map1.addPolyline(new PolylineOptions()
-                        .add(point3R3,point3R4,point3R5)
-                        .width(10)
+                        .add(point1, point3R1, point3R2, point3R3)
+                        .width(5)
                         .color(Color.GREEN));
+                Polyline line1 = map1.addPolyline(new PolylineOptions()
+                        .add(point3R3, point3R4, point3R5)
+                        .width(10)
+                        .color(Color.RED));
 
                 Toast.makeText(MapEchternach.this, selectedRadioValue1, Toast.LENGTH_LONG).show();
             }
@@ -213,7 +217,7 @@ public class MapEchternach extends AppCompatActivity {
                         .position(point3R5)
                         .title("2000m")
                         .draggable(true)
-                        .snippet("Run normally.")
+                        .snippet("Start Walk and Breath Deeply.")
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
                 map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point3R5, 16));
 
@@ -221,7 +225,7 @@ public class MapEchternach extends AppCompatActivity {
                         .position(point3R8)
                         .title("2min")
                         .draggable(true)
-                        .snippet("Walk and Breath Deeply.")
+                        .snippet("Finished Walk and Breath Deeply.")
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
                 map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point3R8, 16));
 
@@ -235,9 +239,13 @@ public class MapEchternach extends AppCompatActivity {
 
                 // Add a thin Green line.
                 Polyline line = map1.addPolyline(new PolylineOptions()
-                        .add(point3R5,point3R6,point3R7,point3R8)
+                        .add(point1, point3R1, point3R2, point3R3,point3R4,point3R5)
                         .width(5)
-                        .color(Color.YELLOW));
+                        .color(Color.GREEN));
+                Polyline line1 = map1.addPolyline(new PolylineOptions()
+                        .add(point3R5,point3R6,point3R7,point3R8)
+                        .width(10)
+                        .color(Color.RED));
 
                 Toast.makeText(MapEchternach.this, selectedRadioValue1, Toast.LENGTH_LONG).show();
             }
@@ -258,7 +266,7 @@ public class MapEchternach extends AppCompatActivity {
                         .position(point3R8)
                         .title("2min")
                         .draggable(true)
-                        .snippet("Walk and Breath Deeply.")
+                        .snippet("Start Run Normally again.")
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
                 map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point3R8, 16));
 
@@ -266,7 +274,7 @@ public class MapEchternach extends AppCompatActivity {
                         .position(point3R10)
                         .title("2000m")
                         .draggable(true)
-                        .snippet("Run Normally")
+                        .snippet("Finished Run Normally")
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
                 map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point3R10, 16));
 
@@ -280,9 +288,13 @@ public class MapEchternach extends AppCompatActivity {
 
                 // Add a thin Green line.
                 Polyline line = map1.addPolyline(new PolylineOptions()
-                        .add(point3R8,point3R9,point3R10)
+                        .add(point1, point3R1, point3R2, point3R3,point3R4,point3R5, point3R6,point3R7,point3R8)
                         .width(5)
-                        .color(Color.MAGENTA));
+                        .color(Color.GREEN));
+                Polyline line1 = map1.addPolyline(new PolylineOptions()
+                        .add(point3R8,point3R9,point3R10)
+                        .width(10)
+                        .color(Color.RED));
 
                 Toast.makeText(MapEchternach.this, selectedRadioValue1, Toast.LENGTH_LONG).show();
             }
@@ -303,7 +315,7 @@ public class MapEchternach extends AppCompatActivity {
                         .position(point3R10)
                         .title("2000m")
                         .draggable(true)
-                        .snippet("Run Normally")
+                        .snippet("Start Sprint and Walk.")
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
                 map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point3R10, 16));
 
@@ -311,7 +323,7 @@ public class MapEchternach extends AppCompatActivity {
                         .position(point3R12)
                         .title("400m and 2min")
                         .draggable(true)
-                        .snippet("Sprint and Walk.")
+                        .snippet("Finished Sprint and Walk.")
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
                 map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point3R12, 16));
 
@@ -325,9 +337,13 @@ public class MapEchternach extends AppCompatActivity {
 
                 // Add a thin Green line.
                 Polyline line = map1.addPolyline(new PolylineOptions()
-                        .add(point3R10,point3R11,point3R12)
+                        .add(point1, point3R1, point3R2, point3R3,point3R4,point3R5, point3R6,point3R7,point3R8,point3R9,point3R10)
                         .width(5)
-                        .color(Color.GRAY));
+                        .color(Color.GREEN));
+                Polyline line1 = map1.addPolyline(new PolylineOptions()
+                        .add(point3R10,point3R11,point3R12)
+                        .width(10)
+                        .color(Color.RED));
 
                 Toast.makeText(MapEchternach.this, selectedRadioValue1, Toast.LENGTH_LONG).show();
             }
@@ -348,7 +364,7 @@ public class MapEchternach extends AppCompatActivity {
                         .position(point3R12)
                         .title("400m and 2min")
                         .draggable(true)
-                        .snippet("Sprint and Walk.")
+                        .snippet("Start Make Stretching Exercise.")
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
                 map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point3R12, 16));
 
@@ -357,15 +373,19 @@ public class MapEchternach extends AppCompatActivity {
                         .position(point3)
                         .title("Finishing Position")
                         .draggable(true)
-                        .snippet("Make Stretching Exercise")
+                        .snippet("Finished Make Stretching Exercise Echternach.")
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
                 map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point3, 16));
 
                 // Add a thin Green line.
                 Polyline line = map1.addPolyline(new PolylineOptions()
-                        .add(point3R12,point3R13,point3)
+                        .add(point1, point3R1, point3R2, point3R3,point3R4,point3R5, point3R6,point3R7,point3R8,point3R9,point3R10,point3R11,point3R12)
                         .width(5)
-                        .color(Color.CYAN));
+                        .color(Color.GREEN));
+                Polyline line1 = map1.addPolyline(new PolylineOptions()
+                        .add(point3R12,point3R13,point3)
+                        .width(10)
+                        .color(Color.RED));
 
                 Toast.makeText(MapEchternach.this, selectedRadioValue1, Toast.LENGTH_LONG).show();
             }
