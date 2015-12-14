@@ -152,12 +152,11 @@ public class MapEttelbruck extends AppCompatActivity {
                         .add(point1, point2R1,point2R2,point2R3)
                         .width(10)
                         .color(Color.RED));
-
+                
                 Toast.makeText(MapEttelbruck.this, selectedRadioValue1, Toast.LENGTH_LONG).show();
             }
 
             if(selectedRadioValue1.equals("Run Normally")){
-
                 //-----------------Test--------------------//
                 Marker first2 = map1.addMarker(new MarkerOptions()
                         .position(point1)
@@ -332,8 +331,6 @@ public class MapEttelbruck extends AppCompatActivity {
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
                 map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R15, 16));
 
-
-
                 Marker second_1 = map1.addMarker(new MarkerOptions()
                         .position(point2)
                         .title("Finishing Position")
@@ -374,7 +371,6 @@ public class MapEttelbruck extends AppCompatActivity {
                         .snippet("Start Make Stretching Exercise")
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
                 map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R15, 16));
-
 
                 Marker second_1 = map1.addMarker(new MarkerOptions()
                         .position(point2)
