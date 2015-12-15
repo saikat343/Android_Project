@@ -74,6 +74,10 @@
         <activity
             android:name=".MapEchternach"
             android:label="@string/title_activity_map_echternach"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".FreeTrail"
+            android:label="@string/title_activity_free_trail"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

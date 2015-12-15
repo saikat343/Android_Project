@@ -28,7 +28,11 @@ public class MainActivity extends AppCompatActivity {
     public void clickStart(View view){
         Intent trainingIntent=new Intent(MainActivity.this,TrainingInstructions.class);
         startActivity(trainingIntent);
+    }
 
+    public void clickFreeTrail(View view){
+        Intent freeTrailIntent=new Intent(MainActivity.this,FreeTrail.class);
+        startActivity(freeTrailIntent);
     }
 
 
