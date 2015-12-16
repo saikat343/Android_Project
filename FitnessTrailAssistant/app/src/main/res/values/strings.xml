@@ -10,4 +10,5 @@
     <string name="title_activity_main2">Main2Activity</string>
     <string name="title_activity_map_echternach">MapEchternach</string>
     <string name="title_activity_free_trail">FreeTrail</string>
+    <string name="title_activity_map_free_trail">MapFreeTrail</string>
 </resources>
