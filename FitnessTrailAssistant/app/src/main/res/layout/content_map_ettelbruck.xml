@@ -12,6 +12,14 @@
     tools:context="com.example.mdenamulhaque.fitnesstrailassistant.MapEttelbruck"
     tools:showIn="@layout/activity_map_ettelbruck">
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Finish"
+        android:id="@+id/button2_finish_ettelbruck"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
     <fragment
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,6 +29,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentTop="true" />
+        android:layout_below="@+id/button2_finish_ettelbruck"
+        android:layout_alignParentBottom="true" />
+
 </RelativeLayout>

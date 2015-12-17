@@ -8,6 +8,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -21,6 +22,9 @@ import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 
 public class MapEchternach extends AppCompatActivity {
+
+    DatabaseHelper myDb;
+    Button btnAddData;
 
     private GoogleMap map1;
 
@@ -43,10 +47,20 @@ public class MapEchternach extends AppCompatActivity {
     LatLng point3R12 = new LatLng(49.79185339, 6.35873478);
     LatLng point3R13 = new LatLng(49.81135357, 6.39718693);
 
+    String start_position=null;
+    String start_point=null;
+    String end_point=null;
+    String finishing_position=null;
+    String track_route1="LUX_Echter";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map_echternach);
+
+        myDb=new DatabaseHelper(this);
+
+        btnAddData=(Button)findViewById(R.id.button2_finish_echternach);
 
         try {
             map1 = ((MapFragment) getFragmentManager().findFragmentById(R.id.mapEchternach)).getMap();
@@ -116,6 +130,11 @@ public class MapEchternach extends AppCompatActivity {
             //-------Marked the specific points in the route-------------//
             if(selectedRadioValue1.equals("Walk Fast Mode")){
 
+                start_position=point1.toString();
+                start_point=point1.toString();
+                end_point=point3R3.toString();
+                finishing_position=point3.toString();
+
                 //-----------------Test--------------------//
                 Marker first1 = map1.addMarker(new MarkerOptions()
                         .position(point1)
@@ -149,9 +168,16 @@ public class MapEchternach extends AppCompatActivity {
                         .color(Color.RED));
 
                 Toast.makeText(MapEchternach.this, selectedRadioValue1, Toast.LENGTH_LONG).show();
+
+                addData();
             }
 
             if(selectedRadioValue1.equals("Run Normally")){
+
+                start_position=point1.toString();
+                start_point=point3R3.toString();
+                end_point=point3R5.toString();
+                finishing_position=point3.toString();
 
                 //-----------------Test--------------------//
                 Marker first2 = map1.addMarker(new MarkerOptions()
@@ -192,17 +218,23 @@ public class MapEchternach extends AppCompatActivity {
                 Polyline line = map1.addPolyline(new PolylineOptions()
                         .add(point1, point3R1, point3R2, point3R3)
                         .width(5)
-                        .color(Color.GREEN));
+                        .color(Color.BLUE));
                 Polyline line1 = map1.addPolyline(new PolylineOptions()
                         .add(point3R3, point3R4, point3R5)
                         .width(10)
                         .color(Color.RED));
 
                 Toast.makeText(MapEchternach.this, selectedRadioValue1, Toast.LENGTH_LONG).show();
+
+                addData();
             }
 
             if(selectedRadioValue1.equals("Walk and Breath Deeply")){
 
+                start_position=point1.toString();
+                start_point=point3R5.toString();
+                end_point=point3R8.toString();
+                finishing_position=point3.toString();
                 //-----------------Test--------------------//
                 Marker first_1 = map1.addMarker(new MarkerOptions()
                         .position(point1)
@@ -241,16 +273,23 @@ public class MapEchternach extends AppCompatActivity {
                 Polyline line = map1.addPolyline(new PolylineOptions()
                         .add(point1, point3R1, point3R2, point3R3,point3R4,point3R5)
                         .width(5)
-                        .color(Color.GREEN));
+                        .color(Color.BLUE));
                 Polyline line1 = map1.addPolyline(new PolylineOptions()
                         .add(point3R5,point3R6,point3R7,point3R8)
                         .width(10)
                         .color(Color.RED));
 
                 Toast.makeText(MapEchternach.this, selectedRadioValue1, Toast.LENGTH_LONG).show();
+
+                addData();
             }
 
             if(selectedRadioValue1.equals("Again Run Normally")){
+
+                start_position=point1.toString();
+                start_point=point3R8.toString();
+                end_point=point3R10.toString();
+                finishing_position=point3.toString();
 
                 //-----------------Test--------------------//
                 Marker first_1 = map1.addMarker(new MarkerOptions()
@@ -290,16 +329,23 @@ public class MapEchternach extends AppCompatActivity {
                 Polyline line = map1.addPolyline(new PolylineOptions()
                         .add(point1, point3R1, point3R2, point3R3,point3R4,point3R5, point3R6,point3R7,point3R8)
                         .width(5)
-                        .color(Color.GREEN));
+                        .color(Color.BLUE));
                 Polyline line1 = map1.addPolyline(new PolylineOptions()
                         .add(point3R8,point3R9,point3R10)
                         .width(10)
                         .color(Color.RED));
 
                 Toast.makeText(MapEchternach.this, selectedRadioValue1, Toast.LENGTH_LONG).show();
+
+                addData();
             }
 
             if(selectedRadioValue1.equals("Sprint and Walk")){
+
+                start_position=point1.toString();
+                start_point=point3R10.toString();
+                end_point=point3R12.toString();
+                finishing_position=point3.toString();
 
                 //-----------------Test--------------------//
                 Marker first_1 = map1.addMarker(new MarkerOptions()
@@ -339,15 +385,22 @@ public class MapEchternach extends AppCompatActivity {
                 Polyline line = map1.addPolyline(new PolylineOptions()
                         .add(point1, point3R1, point3R2, point3R3,point3R4,point3R5, point3R6,point3R7,point3R8,point3R9,point3R10)
                         .width(5)
-                        .color(Color.GREEN));
+                        .color(Color.BLUE));
                 Polyline line1 = map1.addPolyline(new PolylineOptions()
                         .add(point3R10,point3R11,point3R12)
                         .width(10)
                         .color(Color.RED));
 
                 Toast.makeText(MapEchternach.this, selectedRadioValue1, Toast.LENGTH_LONG).show();
+
+                addData();
             }
             if(selectedRadioValue1.equals("Make Stretching Exercise")){
+
+                start_position=point1.toString();
+                start_point=point3R12.toString();
+                end_point=point3.toString();
+                finishing_position=point3.toString();
 
                 //-----------------Test--------------------//
                 Marker first_1 = map1.addMarker(new MarkerOptions()
@@ -381,13 +434,15 @@ public class MapEchternach extends AppCompatActivity {
                 Polyline line = map1.addPolyline(new PolylineOptions()
                         .add(point1, point3R1, point3R2, point3R3,point3R4,point3R5, point3R6,point3R7,point3R8,point3R9,point3R10,point3R11,point3R12)
                         .width(5)
-                        .color(Color.GREEN));
+                        .color(Color.BLUE));
                 Polyline line1 = map1.addPolyline(new PolylineOptions()
                         .add(point3R12,point3R13,point3)
                         .width(10)
                         .color(Color.RED));
 
                 Toast.makeText(MapEchternach.this, selectedRadioValue1, Toast.LENGTH_LONG).show();
+
+                addData();
             }
 
             else {}
@@ -396,6 +451,29 @@ public class MapEchternach extends AppCompatActivity {
         }catch (NullPointerException e) {
             e.printStackTrace();
         }
+    }
+
+    public void addData(){
+        btnAddData.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                boolean isInserted = myDb.insertData(start_position.toString(),
+                        start_point.toString(),
+                        end_point.toString(),
+                        finishing_position.toString(),
+                        track_route1.toString());
+                if (isInserted = true) {
+                    Toast.makeText(MapEchternach.this, "Data Inserted", Toast.LENGTH_LONG).show();
+
+                    Intent mapIntent = new Intent(MapEchternach.this, EchternachActivity.class);
+                    startActivity(mapIntent);
+                }
+                else {
+                    Toast.makeText(MapEchternach.this, "Data not Inserted", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
     }
 
 }
