@@ -1,6 +1,8 @@
 package com.example.mdenamulhaque.fitnesstrailassistant;
 
 import android.Manifest;
+import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Criteria;
@@ -31,6 +33,7 @@ public class MapFreeTrail extends AppCompatActivity {
     private GoogleMap map;
 
     public EditText editText;
+    public Context context;
 
 
     @Override
@@ -38,16 +41,27 @@ public class MapFreeTrail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map_free_trail);
 
-        editText=(EditText)findViewById(R.id.editText_Search);
+        //editText=(EditText)findViewById(R.id.editText_Search);
+
+        Intent intent = getIntent();
+        String getDepartureValue = intent.getStringExtra("departureValue");
+        String getArrivalue=intent.getStringExtra("arraivalValue");
+
+
 
         //map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
 
-        try {
+       // try {
                         map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
-                        setUpMap();
-            } catch (NullPointerException e) {
+            new LocationOverlay(this ,  map,   getDepartureValue,   getArrivalue).execute();
+
+        Toast.makeText(MapFreeTrail.this, getDepartureValue, Toast.LENGTH_LONG).show();
+        Toast.makeText(MapFreeTrail.this, getArrivalue, Toast.LENGTH_LONG).show();
+
+                        //setUpMap();
+           /* } catch (NullPointerException e) {
                         e.printStackTrace();
-            }
+            }*/
 
 
     }
@@ -95,7 +109,7 @@ public class MapFreeTrail extends AppCompatActivity {
         }
     }*/
 
-    private void setUpMap() {
+    /*private void setUpMap() {
         map.setMyLocationEnabled(true);
                 LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
                Criteria criteria = new Criteria();
@@ -122,6 +136,6 @@ public class MapFreeTrail extends AppCompatActivity {
         map.animateCamera(CameraUpdateFactory.zoomTo(20));
         map.addMarker(new MarkerOptions().position(new LatLng(latitude,longitude)).title("I am here."));
 
-    }
+    }*/
 
 }
