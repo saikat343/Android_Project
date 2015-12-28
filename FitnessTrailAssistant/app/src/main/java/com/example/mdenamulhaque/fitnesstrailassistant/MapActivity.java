@@ -36,10 +36,10 @@ import android.util.Log;
 
 public class MapActivity extends AppCompatActivity {
 
-    //-----Luxembourg-------------------//
+    //-----Luxembourg City Coordinates-------------------//
     LatLng point1 = new LatLng(49.61630634, 6.12658522);
 
-    //---Start---Ettelbruck Road-----------------------//
+    //---Start---Ettelbruck Road Coordinates-----------------------//
     LatLng point2 = new LatLng(49.8448811, 6.10255263);
     LatLng point2R1 = new LatLng(49.62667422, 6.11978214);
     LatLng point2R2 = new LatLng(49.64268385, 6.13626163);
@@ -58,7 +58,7 @@ public class MapActivity extends AppCompatActivity {
     LatLng point2R15 = new LatLng(49.81312593, 6.07309025);
     LatLng point2R16 = new LatLng(49.8308459, 6.07858341);
 
-    //-----Start--Echternach------Road---------------//
+    //-----Start--Echternach------Road coordinates---------------//
     LatLng point3 = new LatLng(49.81298973, 6.42939589);
     LatLng point3R1 = new LatLng(49.62311581, 6.15823429);
     LatLng point3R2 = new LatLng(49.64268385, 6.16647403);
@@ -84,9 +84,9 @@ public class MapActivity extends AppCompatActivity {
 
         try {
 
-            //-------------First ok------------------------//
+            //-------------Get map------------------------//
             map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
-            //-----------------Test--------------------//
+            //-----------------Luxembourg city add marker --------------------//
             Marker first = map.addMarker(new MarkerOptions()
                     .position(point1)
                     .title("Luxembourg City")
@@ -96,55 +96,7 @@ public class MapActivity extends AppCompatActivity {
             map.moveCamera(CameraUpdateFactory.newLatLngZoom(point1, 16));
 
             //---------Ettelbruck Road Add marker--------------------//
-           /* Marker ettelbruck_1 = map.addMarker(new MarkerOptions()
-                    .position(point2R1)
-                    .title("First 500m")
-                    .draggable(true)
-                    .snippet("Please walk in a fast mode.")
-                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-            map.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R1, 16));
-            Marker ettelbruck_2 = map.addMarker(new MarkerOptions()
-                    .position(point2R4)
-                    .title("2000m")
-                    .draggable(true)
-                    .snippet("Run normally.")
-                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-            map.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R4, 16));
-            Marker ettelbruck_3 = map.addMarker(new MarkerOptions()
-                    .position(point2R5)
-                    .title("2 min")
-                    .draggable(true)
-                    .snippet("Walk and breath deeply.")
-                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-            map.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R5, 16));
-            Marker ettelbruck_4 = map.addMarker(new MarkerOptions()
-                    .position(point2R9)
-                    .title("2000m")
-                    .draggable(true)
-                    .snippet("Run normally.")
-                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-            map.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R9, 16));
-            Marker ettelbruck_5 = map.addMarker(new MarkerOptions()
-                    .position(point2R10)
-                    .title("400m")
-                    .draggable(true)
-                    .snippet("Sprint")
-                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-            map.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R10, 16));
-            Marker ettelbruck_6 = map.addMarker(new MarkerOptions()
-                    .position(point2R13)
-                    .title("2 min")
-                    .draggable(true)
-                    .snippet("Walk")
-                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-            map.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R13, 16));
-            Marker ettelbruck_7 = map.addMarker(new MarkerOptions()
-                    .position(point2R14)
-                    .title("Exercise")
-                    .draggable(true)
-                    .snippet("Make stretching exercise.")
-                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-            map.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R14, 16));*/
+
             Marker second = map.addMarker(new MarkerOptions()
                     .position(point2)
                     .title("Ettelbruck")
@@ -154,55 +106,7 @@ public class MapActivity extends AppCompatActivity {
             map.moveCamera(CameraUpdateFactory.newLatLngZoom(point2, 16));
 
             //---------Echternach Road Add marker--------------------//
-            /*Marker echternach_1 = map.addMarker(new MarkerOptions()
-                    .position(point3R1)
-                    .title("First 500m")
-                    .draggable(true)
-                    .snippet("Please walk in a fast mode.")
-                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-            map.moveCamera(CameraUpdateFactory.newLatLngZoom(point3R1, 16));
-            Marker echternach_2 = map.addMarker(new MarkerOptions()
-                    .position(point3R4)
-                    .title("2000m")
-                    .draggable(true)
-                    .snippet("Run normally.")
-                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-            map.moveCamera(CameraUpdateFactory.newLatLngZoom(point3R4, 16));
-            Marker echternach_3 = map.addMarker(new MarkerOptions()
-                    .position(point3R5)
-                    .title("2 min")
-                    .draggable(true)
-                    .snippet("Walk and breath deeply.")
-                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-            map.moveCamera(CameraUpdateFactory.newLatLngZoom(point3R5, 16));
-            Marker echternach_4 = map.addMarker(new MarkerOptions()
-                    .position(point3R8)
-                    .title("2000m")
-                    .draggable(true)
-                    .snippet("Run normally.")
-                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-            map.moveCamera(CameraUpdateFactory.newLatLngZoom(point3R8, 16));
-            Marker echternach_5 = map.addMarker(new MarkerOptions()
-                    .position(point3R9)
-                    .title("400m")
-                    .draggable(true)
-                    .snippet("Sprint")
-                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-            map.moveCamera(CameraUpdateFactory.newLatLngZoom(point3R9, 16));
-            Marker echternach_6 = map.addMarker(new MarkerOptions()
-                    .position(point3R10)
-                    .title("2 min")
-                    .draggable(true)
-                    .snippet("Walk")
-                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-            map.moveCamera(CameraUpdateFactory.newLatLngZoom(point3R10, 16));
-            Marker echternach_7 = map.addMarker(new MarkerOptions()
-                    .position(point3R11)
-                    .title("Exercise")
-                    .draggable(true)
-                    .snippet("Make stretching exercise.")
-                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-            map.moveCamera(CameraUpdateFactory.newLatLngZoom(point3R11, 16));*/
+
             Marker third = map.addMarker(new MarkerOptions()
                     .position(point3)
                     .title("Echternach")
@@ -211,16 +115,7 @@ public class MapActivity extends AppCompatActivity {
                     .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
             map.moveCamera(CameraUpdateFactory.newLatLngZoom(point3, 16));
 
-            /*Marker melbourne = mMap.addMarker(new MarkerOptions()
-                    .position(MELBOURNE)
-                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));*/
-            /*private void updatePolyLine(LatLng latLng) {
-                List<LatLng> points = polyLine.getPoints();
-                points.add(latLng);
-                polyLine.setPoints(points);
-            }*/
-
-            // Polylines are useful for marking paths and routes on the map.
+            //------------Add polylines for both Routes------//
             map.addPolyline(new PolylineOptions().geodesic(true)
                     .add(point1)  // Luxembourg
                     .add(point2R1)

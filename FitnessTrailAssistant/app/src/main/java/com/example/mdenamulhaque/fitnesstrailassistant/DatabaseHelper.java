@@ -24,13 +24,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String col_7="END_LONGITUDE";
     public static final String col_8="TRACK_ROUTE";
 
-
+    //---------------Create database-----------//
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
         //------Use for database create----------//
         //SQLiteDatabase db=this.getWritableDatabase();
     }
 
+    //-------------Create database tables----------//
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT,START_LATITUDE TEXT,START_LONGITUDE TEXT,FINISH_LATITUDE TEXT,FINISH_LONGITUDE TEXT,END_LATITUDE TEXT,END_LONGITUDE TEXT,TRACK_ROUTE TEXT)");
@@ -41,6 +42,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS "+TABLE_NAME);
     }
 
+    //------Data inserted into database---------------//
     public  boolean insertData(String start_lat,String finish_lat,String end_lat,String finishing_point,String track_route){
         SQLiteDatabase db=this.getWritableDatabase();
         ContentValues contentValues=new ContentValues();
@@ -56,6 +58,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return true;
     }
 
+    //----Data Retrieve from database------//
     public Cursor getAllData(){
         SQLiteDatabase db=this.getWritableDatabase();
         Cursor res=db.rawQuery("select * from "+TABLE_NAME,null);

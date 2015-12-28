@@ -72,19 +72,17 @@ public class LocationOverlay extends AsyncTask<Void, Integer, Boolean> {
     @Override
     protected Boolean doInBackground(Void... params) {
         try {
-//Construction de l'url à appeler
-            //final StringBuilder url = new String("http://maps.googleapis.com/maps/api/directions/xml?sensor=false&language=en");
-
+            //Construction of the url to call
             final StringBuilder url=new StringBuilder("http://maps.googleapis.com/maps/api/directions/xml?sensor=false&language=en");
             url.append("&origin=");
             url.append(editDeparture.replace(' ', '+'));
             url.append("&destination=");
             url.append(editArrival.replace(' ', '+'));
 
-//Appel du web service
+            //Call the webservice
             final InputStream stream = new URL(url.toString()).openStream();
 
-//Traitement des données
+            //Data processing
             final DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
             documentBuilderFactory.setIgnoringComments(true);
 
@@ -93,13 +91,13 @@ public class LocationOverlay extends AsyncTask<Void, Integer, Boolean> {
             final Document document = documentBuilder.parse(stream);
             document.getDocumentElement().normalize();
 
-//On récupèred'abord le status de la requête
+            //We first retrieves the status of the request
             final String status = document.getElementsByTagName("status").item(0).getTextContent();
             if(!"OK".equals(status)) {
                 return false;
             }
 
-//On récupère les steps
+            //Recovering the steps
             final Element elementLeg = (Element) document.getElementsByTagName("leg").item(0);
             final NodeList nodeListStep = elementLeg.getElementsByTagName("step");
             final int length = nodeListStep.getLength();
@@ -110,7 +108,7 @@ public class LocationOverlay extends AsyncTask<Void, Integer, Boolean> {
                 if(nodeStep.getNodeType() == Node.ELEMENT_NODE) {
                     final Element elementStep = (Element) nodeStep;
 
-//On décode les points du XML
+                    //Points XML decoding
                     decodePolylines(elementStep.getElementsByTagName("points").item(0).getTextContent());
                 }
             }
@@ -163,26 +161,27 @@ public class LocationOverlay extends AsyncTask<Void, Integer, Boolean> {
             Toast.makeText(context, TOAST_ERR_MAJ, Toast.LENGTH_SHORT).show();
         }
         else {
-//On déclare le polyline, c'est-à-dire le trait (ici bleu) que l'onajoute sur la carte pour tracer l'itinéraire
+
+            //It says polyline, that is to say the line (blue here) that onajoute on the map to trace the route
             final PolylineOptions polylines = new PolylineOptions();
             polylines.color(Color.BLUE);
 
-//On construit le polyline
+            //On construct polyline
             for(final LatLng latLng : lstLatLng) {
                 polylines.add(latLng);
             }
 
-//On déclare un marker vert que l'onplacera sur le départ
+            //It says that a green marker will be placed on the start
             final MarkerOptions markerA = new MarkerOptions();
             markerA.position(lstLatLng.get(0));
             markerA.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
 
-//On déclare un marker rouge que l'onmettra sur l'arrivée
+            //It says a red marker and put them on arrival
             final MarkerOptions markerB = new MarkerOptions();
             markerB.position(lstLatLng.get(lstLatLng.size()-1));
             markerB.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
 
-//On met à jour la carte
+            //On update the map
             gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(lstLatLng.get(0), 10));
             gMap.addMarker(markerA);
             gMap.addPolyline(polylines);

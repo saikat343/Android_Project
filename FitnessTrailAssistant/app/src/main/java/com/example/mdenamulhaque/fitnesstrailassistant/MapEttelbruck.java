@@ -29,10 +29,10 @@ public class MapEttelbruck extends AppCompatActivity {
 
     private GoogleMap map1;
 
-    //-----Luxembourg-------------------//
+    //-----Luxembourg coordinates-------------------//
     LatLng point1 = new LatLng(49.61630634, 6.12658522);
 
-    //----Ettelbruck Road-----------------------//
+    //----Ettelbruck Road coordinates-----------------------//
     LatLng point2 = new LatLng(49.8448811, 6.10255263);
     LatLng point2R1 = new LatLng(49.62667422, 6.11978214);
     LatLng point2R2 = new LatLng(49.64268385, 6.13626163);
@@ -72,64 +72,8 @@ public class MapEttelbruck extends AppCompatActivity {
             Intent intent = getIntent();
             String selectedRadioValue1 = intent.getStringExtra("radioGroup1Selected");
 
-            //-------Predefined Route points add------------------------//
-            /*Marker first_1 = map1.addMarker(new MarkerOptions()
-                    .position(point1)
-                    .title("Luxembourg City")
-                    .draggable(true)
-                    .snippet("Luxembourg City in Luxembourg.")
-                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-            map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point1, 16));
 
-            Marker first = map1.addMarker(new MarkerOptions()
-                    .position(point2R3)
-                    .title("500m")
-                    .draggable(true)
-                    .snippet("Walk Fast Mode")
-                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-            map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R3, 16));
-
-            Marker second = map1.addMarker(new MarkerOptions()
-                    .position(point2R6)
-                    .title("2000m")
-                    .draggable(true)
-                    .snippet("Run Normally")
-                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-            map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R6, 16));
-
-            Marker third = map1.addMarker(new MarkerOptions()
-                    .position(point2R9)
-                    .title("2min")
-                    .draggable(true)
-                    .snippet("Walk and Breath Deeply")
-                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-            map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R9, 16));
-
-            Marker fourth = map1.addMarker(new MarkerOptions()
-                    .position(point2R12)
-                    .title("2000m")
-                    .draggable(true)
-                    .snippet("Again Run Normally")
-                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-            map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R12, 16));
-
-            Marker five = map1.addMarker(new MarkerOptions()
-                    .position(point2R15)
-                    .title("400m and 2min")
-                    .draggable(true)
-                    .snippet("Sprint and Walk")
-                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-            map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2R15, 16));
-
-            Marker second_1 = map1.addMarker(new MarkerOptions()
-                    .position(point2)
-                    .title("Make Stretching Exercise")
-                    .draggable(true)
-                    .snippet("Finishing Point in Ettelbruck City.")
-                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-            map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2, 16));*/
-
-            //-------End Predefined Route points add------------------------//
+            //------- Add Marked the specific points in the route-------------//
 
             if(selectedRadioValue1.equals("Walk Fast Mode")){
 
@@ -138,8 +82,6 @@ public class MapEttelbruck extends AppCompatActivity {
                 end_point=point2R3.toString();
                 finishing_position=point2.toString();
 
-
-                //-----------------Test--------------------//
                 Marker first1 = map1.addMarker(new MarkerOptions()
                         .position(point1)
                         .title("Start Position")
@@ -182,7 +124,7 @@ public class MapEttelbruck extends AppCompatActivity {
                 start_point=point2R3.toString();
                 end_point=point2R6.toString();
                 finishing_position=point2.toString();
-                //-----------------Test--------------------//
+
                 Marker first2 = map1.addMarker(new MarkerOptions()
                         .position(point1)
                         .title("Start Position")
@@ -216,7 +158,7 @@ public class MapEttelbruck extends AppCompatActivity {
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
                 map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2, 16));
 
-                // Add a thin Green line.
+                // Add a thin Blue and Red  line.
                 Polyline line = map1.addPolyline(new PolylineOptions()
                         .add(point1, point2R1, point2R2,point2R3)
                         .width(5)
@@ -237,7 +179,6 @@ public class MapEttelbruck extends AppCompatActivity {
                 end_point=point2R9.toString();
                 finishing_position=point2.toString();
 
-                //-----------------Test--------------------//
                 Marker first_1 = map1.addMarker(new MarkerOptions()
                         .position(point1)
                         .title("Start Position")
@@ -271,7 +212,7 @@ public class MapEttelbruck extends AppCompatActivity {
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
                 map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2, 16));
 
-                // Add a thin Green line.
+                // Add a thin Blue and Red  line.
                 Polyline line = map1.addPolyline(new PolylineOptions()
                         .add(point1, point2R1, point2R2,point2R3,point2R4,point2R5,point2R6)
                         .width(5)
@@ -293,7 +234,6 @@ public class MapEttelbruck extends AppCompatActivity {
                 end_point=point2R12.toString();
                 finishing_position=point2.toString();
 
-                //-----------------Test--------------------//
                 Marker first_1 = map1.addMarker(new MarkerOptions()
                         .position(point1)
                         .title("Start Position")
@@ -327,7 +267,7 @@ public class MapEttelbruck extends AppCompatActivity {
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
                 map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2, 16));
 
-                // Add a thin Green line.
+                // Add a thin Blue and Red  line.
                 Polyline line = map1.addPolyline(new PolylineOptions()
                         .add(point1, point2R1, point2R2,point2R3,point2R4,point2R5,point2R6,point2R7,point2R8,point2R9)
                         .width(5)
@@ -349,7 +289,6 @@ public class MapEttelbruck extends AppCompatActivity {
                 end_point=point2R15.toString();
                 finishing_position=point2.toString();
 
-                //-----------------Test--------------------//
                 Marker first_1 = map1.addMarker(new MarkerOptions()
                         .position(point1)
                         .title("Start Position")
@@ -383,7 +322,7 @@ public class MapEttelbruck extends AppCompatActivity {
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
                 map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2, 16));
 
-                // Add a thin Green line.
+                // Add a thin Blue and Red  line.
                 Polyline line = map1.addPolyline(new PolylineOptions()
                         .add(point1, point2R1, point2R2,point2R3,point2R4,point2R5,point2R6,point2R7,point2R8,point2R9,point2R10,point2R11,point2R12)
                         .width(5)
@@ -404,7 +343,6 @@ public class MapEttelbruck extends AppCompatActivity {
                 end_point=point2.toString();
                 finishing_position=point2.toString();
 
-                //-----------------Test--------------------//
                 Marker first_1 = map1.addMarker(new MarkerOptions()
                         .position(point1)
                         .title("Start Position")
@@ -431,7 +369,7 @@ public class MapEttelbruck extends AppCompatActivity {
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
                 map1.moveCamera(CameraUpdateFactory.newLatLngZoom(point2, 16));
 
-                // Add a thin Green line.
+                // Add a thin Blue and Red  line.
                 Polyline line = map1.addPolyline(new PolylineOptions()
                         .add(point1, point2R1, point2R2,point2R3,point2R4,point2R5,point2R6,point2R7
                                 ,point2R8,point2R9,point2R10,point2R11,point2R12,point2R13,point2R14,point2R15)
@@ -455,6 +393,7 @@ public class MapEttelbruck extends AppCompatActivity {
 
     }
 
+    //---------Save data into database-----//
     public void addData(){
         btnAddData.setOnClickListener(new View.OnClickListener(){
 

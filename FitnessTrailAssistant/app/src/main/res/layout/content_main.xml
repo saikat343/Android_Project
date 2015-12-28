@@ -12,7 +12,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Launch Google Map"
+        android:text="Predefined Route In Google Map"
         android:id="@+id/button"
         android:layout_marginTop="91dp"
         android:onClick="launchMap"
@@ -22,7 +22,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Start"
+        android:text="Start Itinerary"
         android:id="@+id/button2_start"
         android:onClick="clickStart"
         android:layout_below="@+id/button"

@@ -19,40 +19,11 @@ import java.util.List;
 import java.util.Locale;
 
 public class FreeTrail extends AppCompatActivity {
-    //private TextView tvLocation;
-    // Default Latitude
-    //private int latitude = 28426365;
 
-    // Default Longitude
-    //private int longitude = 77320393;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_free_trail);
-
-        //-----------------------------------------------------------------//
-        
-        //-----------------------------------------------------------------//
-
-       // try {
-            /*tvLocation = (TextView) findViewById(R.id.textView5);
-            Geocoder geo = new Geocoder(FreeTrail.this.getApplicationContext(), Locale.getDefault());
-            List<Address> addresses = geo.getFromLocation(latitude, longitude, 1);
-            if (addresses.isEmpty()) {
-                tvLocation.setText("Waiting for Location");
-            }
-            else {
-                if (addresses.size() > 0) {
-                    tvLocation.setText(addresses.get(0).getFeatureName() + ", " + addresses.get(0).getLocality() +", " + addresses.get(0).getAdminArea() + ", " + addresses.get(0).getCountryName());
-                    //Toast.makeText(getApplicationContext(), "Address:- " + addresses.get(0).getFeatureName() + addresses.get(0).getAdminArea() + addresses.get(0).getLocality(), Toast.LENGTH_LONG).show();
-                }
-            }*/
-
-
-        /*}catch (IOException e) {
-            e.printStackTrace();
-        }*/
-
     }
 
     public void clickFreeTrail(View view){
@@ -66,6 +37,7 @@ public class FreeTrail extends AppCompatActivity {
         String arrivalvalue=editArrival.getText().toString();
 
         Intent mapFreeTrailIntent=new Intent(FreeTrail.this,MapFreeTrail.class);
+        //------Send data------//
         mapFreeTrailIntent.putExtra("departureValue", departurevalue);
         mapFreeTrailIntent.putExtra("arraivalValue",arrivalvalue);
         startActivity(mapFreeTrailIntent);
